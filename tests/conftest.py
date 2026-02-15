@@ -57,3 +57,8 @@ def code_block_refs(fixtures_dir: Path) -> Path:
 @pytest.fixture
 def empty_section(fixtures_dir: Path) -> Path:
     return fixtures_dir / "empty_section.prompt.md"
+
+
+@pytest.fixture
+def unreachable_output(fixtures_dir: Path) -> Path:
+    return fixtures_dir / "unreachable_output.prompt.md"

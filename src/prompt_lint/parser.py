@@ -130,8 +130,7 @@ def _build_section(heading: str, content_lines: list[str], start_line: int) -> S
     if kind == SectionKind.INPUT:
         section.variables = _extract_input_variables(content_lines, start_line)
 
-    if kind == SectionKind.OUTPUT:
-        section.output_fields = _extract_output_fields(content_lines, start_line)
+    section.output_fields = _extract_output_fields(content_lines, start_line)
 
     section.references = _extract_references(content_lines, start_line, kind)
 

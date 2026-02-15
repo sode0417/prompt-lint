@@ -25,6 +25,7 @@ class RuleBase(ABC):
 def get_all_rules() -> list[RuleBase]:
     """Return instances of all built-in rules."""
     from prompt_lint.rules.frontmatter import FrontmatterRule
+    from prompt_lint.rules.output_reachable import OutputReachableRule
     from prompt_lint.rules.required_sections import RequiredSectionsRule
     from prompt_lint.rules.variable_defined import VariableDefinedRule
     from prompt_lint.rules.variable_unused import VariableUnusedRule
@@ -33,5 +34,6 @@ def get_all_rules() -> list[RuleBase]:
         RequiredSectionsRule(),
         VariableDefinedRule(),
         VariableUnusedRule(),
+        OutputReachableRule(),
         FrontmatterRule(),
     ]

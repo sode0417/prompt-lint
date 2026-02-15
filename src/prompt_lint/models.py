@@ -156,6 +156,15 @@ class PromptDocument:
                 return section.output_fields
         return []
 
+    @property
+    def output_references_in_steps(self) -> list[OutputField]:
+        """Output field references (**name**) found in non-Output sections."""
+        refs: list[OutputField] = []
+        for section in self.sections:
+            if section.kind not in (SectionKind.OUTPUT, None):
+                refs.extend(section.output_fields)
+        return refs
+
     def get_section(self, kind: SectionKind) -> Section | None:
         for section in self.sections:
             if section.kind == kind:
