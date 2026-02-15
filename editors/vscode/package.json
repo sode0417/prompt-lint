@@ -1,0 +1,40 @@
+{
+  "name": "prompt-lint-vscode",
+  "displayName": "prompt-lint",
+  "description": "Static analysis for .prompt.md files",
+  "version": "0.1.0",
+  "publisher": "sode0417",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": ["Linters", "Programming Languages"],
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "prompt-lint",
+      "properties": {
+        "promptLint.serverPath": {
+          "type": "string",
+          "default": "prompt-lint-lsp",
+          "description": "Path to the prompt-lint-lsp executable"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "typescript": "^5.0.0"
+  }
+}
