@@ -30,14 +30,21 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+lsp = [
+    "pygls>=2.0",
+    "lsprotocol",
+]
 dev = [
     "pytest>=7.0",
     "ruff>=0.4",
     "mypy>=1.0",
+    "pygls>=2.0",
+    "lsprotocol",
 ]
 
 [project.scripts]
 prompt-lint = "prompt_lint.cli:main"
+prompt-lint-lsp = "prompt_lint.lsp.server:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/prompt_lint"]
